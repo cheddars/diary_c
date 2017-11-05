@@ -11,9 +11,9 @@ int i = 0;
 int a = 1;
 
 struct date { //페이지 구조체
-	int year[5];
-	int month[3];
-	int day[3];
+	int year;
+	int month;
+	int day;
 	int count;
 	char *text[100];
 };
@@ -81,7 +81,7 @@ char new_page() {
 		printf("[%d] : %d년%d월%d일 : %s",date_diary[i].count, date_diary[i].year, date_diary[i].month, date_diary[i].day , date_diary[i].text);
 		printf("------------------------------------------------\n");
 		
-		return (date_diary[i].count, date_diary[i].year, date_diary[i].month, date_diary[i].day, date_diary[i].text);
+		return 0;
 	}
 void all_print_page() {
 	int j;
@@ -89,7 +89,7 @@ void all_print_page() {
 
 	if (i >= 1){
 		printf("현재 다이어리에 있는 모든 일정입니다.\n");
-		for(j = 0 ; j < i ; j++){
+		for(j = 0 ; j <= i ; j++){
 			printf("[%d] :  %d년%d월%d일 : %d\n", date_diary[j].count, date_diary[j].year, date_diary[j].month, date_diary[j].day, date_diary[j].text);
 			}
 		}
