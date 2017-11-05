@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char new_page();
+void new_page();
 void all_print_page();
 void find_page();
 
@@ -62,7 +62,7 @@ int main() {
 		}
 	return 0;
 }
-char new_page() {
+void new_page() {
 			
 			date_diary[i].count = a;
 			//printf("%d",date_diary[i].count);
@@ -76,7 +76,7 @@ char new_page() {
 			printf("내용을 입력하세요:");
 			getchar();
 			//scanf("%[^\n]s", &text);
-			fgets(date_diary[i].text, 100, stdin);
+			fgets(date_diary[i].text, 100 , stdin);
 
 		
 		printf("[%d] : %d년%d월%d일 : %s",date_diary[i].count, date_diary[i].year, date_diary[i].month, date_diary[i].day , date_diary[i].text);
@@ -90,7 +90,7 @@ void all_print_page() {
 	if (i >= 1){
 		printf("현재 다이어리에 있는 모든 일정입니다.\n");
 		for(j = 0 ; j < i ; j++){
-			printf("[%d] :  %d년%d월%d일 : %d\n", date_diary[j].count, date_diary[j].year, date_diary[j].month, date_diary[j].day, date_diary[j].text);
+			printf("[%d] :  %d년%d월%d일 : %s\n", date_diary[j].count, date_diary[j].year, date_diary[j].month, date_diary[j].day, date_diary[j].text);
 			}
 		}
 	else {
