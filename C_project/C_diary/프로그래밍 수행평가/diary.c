@@ -5,6 +5,8 @@ char new_page();
 void all_print_page();
 void find_page();
 
+
+
 //char list[1000]; //count = strlen(list[1000]);
 int num;
 int i = 0;
@@ -15,9 +17,9 @@ struct date { //페이지 구조체
 	int month;
 	int day;
 	int count;
-	char *text[100];
+	char text[100];
 };
-
+struct date date_diary[100];
 
 int main() {
 	while (1) {
@@ -61,7 +63,6 @@ int main() {
 	return 0;
 }
 char new_page() {
-	struct date date_diary[100] = {1};
 			
 			date_diary[i].count = a;
 			//printf("%d",date_diary[i].count);
@@ -85,7 +86,6 @@ char new_page() {
 	}
 void all_print_page() {
 	int j;
-	struct date date_diary[100];
 
 	if (i >= 1){
 		printf("현재 다이어리에 있는 모든 일정입니다.\n");
