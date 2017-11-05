@@ -89,7 +89,7 @@ void all_print_page() {
 
 	if (i >= 1){
 		printf("현재 다이어리에 있는 모든 일정입니다.\n");
-		for(j = 0 ; j <= i ; j++){
+		for(j = 0 ; j < i ; j++){
 			printf("[%d] :  %d년%d월%d일 : %d\n", date_diary[j].count, date_diary[j].year, date_diary[j].month, date_diary[j].day, date_diary[j].text);
 			}
 		}
