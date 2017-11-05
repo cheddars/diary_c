@@ -8,6 +8,7 @@ void find_page();
 //char list[1000]; //count = strlen(list[1000]);
 int num;
 int i = 0;
+int a = 1;
 
 struct date { //페이지 구조체
 	int year[5];
@@ -30,7 +31,8 @@ int main() {
 			new_page();
 			
 			i++;
-			
+			a++;
+
 			break;
 
 		case 2: 
@@ -60,10 +62,12 @@ int main() {
 }
 char new_page() {
 	struct date date_diary[100] = {1};
-
-
+			
+			date_diary[i].count = a;
+			//printf("%d",date_diary[i].count);
 			printf("년도를 입력해주세요:");
 			scanf("%d", &date_diary[i].year);
+			//printf("%d", date_diary[i].year);
 			printf("월을 입력해주세요:");
 			scanf("%d", &date_diary[i].month);
 			printf("일을 입력해주세요:");
@@ -73,11 +77,11 @@ char new_page() {
 			//scanf("%[^\n]s", &text);
 			fgets(date_diary[i].text, 100, stdin);
 
-
+		
 		printf("[%d] : %d년%d월%d일 : %s",date_diary[i].count, date_diary[i].year, date_diary[i].month, date_diary[i].day , date_diary[i].text);
 		printf("------------------------------------------------\n");
 		
-		return 0;
+		return (date_diary[i].count, date_diary[i].year, date_diary[i].month, date_diary[i].day, date_diary[i].text);
 	}
 void all_print_page() {
 	int j;
@@ -86,7 +90,7 @@ void all_print_page() {
 	if (i >= 1){
 		printf("현재 다이어리에 있는 모든 일정입니다.\n");
 		for(j = 0 ; j < i ; j++){
-			printf("[%d] :  %d년%d월%d일 : %d\n", date_diary[i].count, date_diary[i].year, date_diary[i].month, date_diary[i].day, date_diary[i].text);
+			printf("[%d] :  %d년%d월%d일 : %d\n", date_diary[j].count, date_diary[j].year, date_diary[j].month, date_diary[j].day, date_diary[j].text);
 			}
 		}
 	else {
